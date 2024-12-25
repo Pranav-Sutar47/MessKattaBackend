@@ -22,6 +22,10 @@ app.use(cors({
 
 require('./Models/config');
 
+app.get('/',(req,res)=>{
+    res.json('Hello');
+});
+
 app.use('/auth',require('./Routes/Auth'));
 
 app.use('/profile',require('./Routes/Profile'));
