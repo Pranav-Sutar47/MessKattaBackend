@@ -20,7 +20,14 @@ app.use(cors({
     credentials:true
 }));
 
-app.options('*',cors());
+app.options('*', (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://messkatta-frontend.vercel.app');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(204); // Respond without body
+});
+
 
 require('./Models/config');
 
