@@ -6,7 +6,7 @@ const login = async(req,res)=>{
     try{
         const {email,password,role} = req.body;
         const user = await UserModel.findOne({email});
-        console.log(user);
+        //console.log(user);
         if(user){
             const isPassEqual = await bcrypt.compare(password,user.password);
 
