@@ -23,7 +23,7 @@ const login = async(req,res)=>{
         }else 
             return res.status(403).json({message:'User not found',success:false});
     }catch(error){
-        console.error('Login error',error);
+        console.log('Login error',error);
         return res.status(500).json({message:'Login Error',success:false,error});
     }
 }
