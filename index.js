@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use(cors({
-    origin:["https://deploy-messkatta.versal.app"],
-    methods:["POST","GET"],
+    origin:"https://messkatta-frontend.vercel.app",
+    methods:'POST,GET,PUT,DELETE',
     credentials:true
 }));
 
