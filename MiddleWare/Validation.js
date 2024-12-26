@@ -12,6 +12,7 @@ const loginValidation = (req,res,next)=>{
 
     if(error)
         return res.status(400).json(error);
+    console.log('hi');
     next();
 }
 
