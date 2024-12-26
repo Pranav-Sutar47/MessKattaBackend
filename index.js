@@ -20,6 +20,8 @@ app.use(cors({
     credentials:true
 }));
 
+app.options('*',cors());
+
 require('./Models/config');
 
 app.get('/',(req,res)=>{
