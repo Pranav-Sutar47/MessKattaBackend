@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+mongoose.set('debug',true);
+
 const AUTHURL = String(process.env.AUTH_DB);
 
 const AUTHDB = mongoose.createConnection(AUTHURL);
