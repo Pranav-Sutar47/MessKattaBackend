@@ -14,19 +14,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended:true}));
 
-app.use(cors({
-    origin:"https://messkatta-frontend.vercel.app",
-    methods:'POST,GET,PUT,DELETE',
-    credentials:true
-}));
-
-app.options('*', (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://messkatta-frontend.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.sendStatus(204); // Respond without body
-});
+app.use(cors());
 
 
 require('./Models/config');
